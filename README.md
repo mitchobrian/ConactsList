@@ -1,4 +1,4 @@
-## H3 Small summery of my long way to my first cross platform app with a HTC ONE S and win8
+#### Small summery of my long way to my first cross platform app with a HTC ONE S and win8
 
 It was my first time to create a small jquery and phonegap based mobile app for android. I found that really small and simple tutorial http://www.techrepublic.com/blog/software-engineer/create-cross-platform-apps-with-phonegap-and-jquery-mobile/ which brought me fast to my first result.
 
