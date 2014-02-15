@@ -1,0 +1,71 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>Contacts List</title> 
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+      
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.0.min.css">
+    <link rel="apple-touch-startup-image" href="img/splash.png" />
+        
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.mobile-1.4.0.min.js"></script>
+    <script type="text/javascript" src="phonegap.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+        
+    <style>
+        @font-face {
+          font-family: "mitch";
+          src: url(http://www.michaelpalmer.de/assets/fonts/mitchhandwriting.ttf) format("truetype");
+        }
+        
+        #page .ui-listview-filter:nth-child(n+2) {
+            display : none;
+        }
+        
+        #my-wrapper {
+            padding-top : 40px;
+        }
+        
+        #my-wrapper form {
+            position : fixed;
+            top      : 40px;
+            left     : 0px;
+            width    : 100%;
+            z-index  : 1;
+        }
+        
+        h3 {
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+         
+</head> 
+<body>
+    <div data-role="page" data-fullscreen="true" id="splash"> 
+
+        <div style="text-align:center; width:100%; margin-top:10%;">
+            <img src="img/splash.png" alt="startup image" />
+            <br />
+            <font style="font-family:mitch"><b></b>simple stupid<br />contacts list</b></font>
+        </div>
+    <script>
+        $(document).on('pageinit','#splash',function(){ 
+            setTimeout(function() {
+                $( ":mobile-pagecontainer" ).pagecontainer( "change", "#page1", { role: "page" } );
+                contactsLoading();
+            }, 2000);
+        });
+    </script>
+    </div>
+    <div data-role="page" data-fullscreen="true" id="page1"> 
+        <div data-role="header" data-position="fixed">
+          <h1 id="contactsheadline">my contacts</h1>
+        </div>
+        <div data-role="content" id="my-wrapper">	
+          <ul data-role="listview" data-inset="false" data-filter="true" data-autodividers="true" id="contactsList"></ul>
+        </div>
+    </div>
+</body>
+</html>
